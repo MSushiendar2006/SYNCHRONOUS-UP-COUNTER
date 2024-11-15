@@ -1,16 +1,15 @@
 ### SYNCHRONOUS-UP-COUNTER
 
-**AIM:**
+## AIM:
 
 To implement 4 bit synchronous up counter and validate functionality.
 
-**SOFTWARE REQUIRED:**
-
+## SOFTWARE REQUIRED:
 Quartus prime
 
-**THEORY**
+## THEORY
 
-**4 bit synchronous UP Counter**
+## 4 bit synchronous UP Counter
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
 
@@ -26,21 +25,47 @@ Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and 
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
-**Procedure**
+## Procedure:
+```
+1.Setup Environment: Open Quartus Prime and create a new project. Name it appropriately and include the required libraries.
+2.Code Implementation: Write and implement the Verilog code for the 4-bit synchronous up counter in Quartus Prime. Ensure that inputs and outputs are properly declared.
+3Compile the Code: Save the code and run the compilation process to check for any syntax or logical errors.
+4.Generate RTL Diagram: Once the code compiles successfully, generate the RTL (Register Transfer Level) schematic to visually confirm the logic.
+5.Simulate the Design: Use the simulation tool in Quartus Prime to generate and observe the timing diagram for the up counter to verify the correctness of the operation.
+6.Analyze Output: Verify that the simulation output matches the expected truth table and ensures that the 4-bit counter increments properly with each clock pulse.
+```
 
-/* write all the steps invloved */
 
-**PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+## PROGRAM:
+```
+Developed by:SUSHIENDAR M
+RegisterNumber:212223040217
+module exp11(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
+```
 
-Developed by: RegisterNumber:
-*/
 
-**RTL LOGIC UP COUNTER**
+## RTL LOGIC UP COUNTER:
+![image](https://github.com/user-attachments/assets/a4a244c0-205a-41dd-b255-01003eeddecc)
 
-**TIMING DIAGRAM FOR IP COUNTER**
 
-**TRUTH TABLE**
+## TIMING DIAGRAM FOR IP COUNTER:
+![image](https://github.com/user-attachments/assets/8234ad4b-40c0-4079-bd80-23bed8cc6bb1)
 
-**RESULTS**
+
+## TRUTH TABLE:
+![WhatsApp Image 2024-11-15 at 09 22 43_99fd2b37](https://github.com/user-attachments/assets/ecc34448-615f-40a0-aa8f-2ca52d111ca5)
+
+
+## RESULTS:
+The 4-bit synchronous up counter was successfully implemented, compiled, and simulated. The RTL schematic, timing diagram, and truth table confirm that the counter works as expected, counting from 0 to 15.
