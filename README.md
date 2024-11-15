@@ -27,20 +27,45 @@ The next flip-flop need only “recognize” that the first flip-flop’s Q outp
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
 **Procedure**
-
-/* write all the steps invloved */
+```
+1.Setup Environment: Open Quartus Prime and create a new project. Name it appropriately and include the required libraries.
+2.Code Implementation: Write and implement the Verilog code for the 4-bit synchronous up counter in Quartus Prime. Ensure that inputs and outputs are properly declared.
+3.Compile the Code: Save the code and run the compilation process to check for any syntax or logical errors.
+4.Generate RTL Diagram: Once the code compiles successfully, generate the RTL (Register Transfer Level) schematic to visually confirm the logic.
+5.Simulate the Design: Use the simulation tool in Quartus Prime to generate and observe the timing diagram for the up counter to verify the correctness of the operation.
+6.Analyze Output: Verify that the simulation output matches the expected truth table and ensures that the 4-bit counter increments properly with each clock pulse.
+```
 
 **PROGRAM**
+```
+Developed by:SUSHIENDAR M
+RegisterNumber:212223040217
+module exp11(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
+```
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
-*/
+## RTL LOGIC UP COUNTER:
+![image](https://github.com/user-attachments/assets/6c49ba55-6a6f-49fc-867a-03b0dc1c0f0a)
 
-**RTL LOGIC UP COUNTER**
 
-**TIMING DIAGRAM FOR IP COUNTER**
 
-**TRUTH TABLE**
+## TIMING DIAGRAM FOR IP COUNTER:
+![image](https://github.com/user-attachments/assets/5bc48eac-1d71-444d-9010-ee43b178b5cc)
 
-**RESULTS**
+
+## TRUTH TABLE:
+![WhatsApp Image 2024-11-15 at 09 22 43_7de32a30](https://github.com/user-attachments/assets/911aa427-b543-43e5-89e1-c277a67349cc)
+
+
+## RESULTS:
+The 4-bit synchronous up counter was successfully implemented, compiled, and simulated. The RTL schematic, timing diagram, and truth table confirm that the counter works as expected, counting from 0 to 15.
